@@ -21,8 +21,8 @@ model User {
 
 model VehicleType {
   id              Int       @id @default(autoincrement())
-  name            String    @unique 
-  numberOfWheels  Int       
+  name            String    @unique // "Hatchback", "SUV", "Sedan", "Cruiser", "Sports"
+  numberOfWheels  Int       // 2 or 4
   vehicles        Vehicle[]
   createdAt       DateTime  @default(now())
   updatedAt       DateTime  @updatedAt
@@ -30,7 +30,7 @@ model VehicleType {
 
 model Vehicle {
   id            Int       @id @default(autoincrement())
-  modelName     String    @unique
+  modelName     String    @unique // e.g., "Maruti Swift", "Honda Activa" - assuming each listed vehicle is unique
   vehicleTypeId Int
   vehicleType   VehicleType @relation(fields: [vehicleTypeId], references: [id])
   bookings      Booking[]
@@ -40,10 +40,10 @@ model Vehicle {
 
 model Booking {
   id         Int       @id @default(autoincrement())
-  userId     Int?      
+  userId     Int?      // Optional if you decide user creation is part of booking
   user       User?     @relation(fields: [userId], references: [id])
-  firstName  String    
-  lastName   String    
+  firstName  String    // Storing directly as per form, can be linked to User if users are pre-registered
+  lastName   String    // Storing directly as per form
   vehicleId  Int
   vehicle    Vehicle   @relation(fields: [vehicleId], references: [id])
   startDate  DateTime
@@ -51,5 +51,5 @@ model Booking {
   createdAt  DateTime  @default(now())
   updatedAt  DateTime  @updatedAt
 
-  @@index([vehicleId, startDate, endDate])
+  @@index([vehicleId, startDate, endDate]) // For efficient overlap checking
 }
