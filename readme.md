@@ -125,7 +125,7 @@ cd backend
 Run the seed command:
 ```Bash
 
-npx prisma db seed
+npm run prisma:seed
 ```
 This will execute the script defined in prisma/seed.js to populate the database.
 API Endpoints (Backend) 📡
