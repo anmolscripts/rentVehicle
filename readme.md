@@ -36,8 +36,8 @@ Clone the Repository:
 
 ```Bash
 
-git clone <your-repository-url>
-cd octalogic-tech-vehicle-rental
+git clone https://github.com/anmolscripts/rentVehicle.git
+cd rentVehicle
 Backend Setup:
 Navigate to the backend directory:
 ```
