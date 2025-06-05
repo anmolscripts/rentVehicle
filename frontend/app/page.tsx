@@ -453,7 +453,7 @@ export default function BookingPage() {
     <Container component="main" maxWidth="sm" sx={{ mt: 4, mb: 4 }}>
       <Paper elevation={3} sx={{ p: { xs: 2, md: 4 } }}>
         <Typography component="h1" variant="h4" align="center" gutterBottom>
-          OCTALOGIC TECH Vehicle Rental
+          Rental Vehicle
         </Typography>
         <Stepper activeStep={activeStep} sx={{ pt: 3, pb: 5 }} alternativeLabel>
           {steps.map((label) => (
