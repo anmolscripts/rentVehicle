@@ -122,6 +122,9 @@ npm run prisma:seed
 ```
 This will execute the script defined in prisma/seed.js to populate the database.
 API Endpoints (Backend) 📡
+
 GET /api/vehicle-types?wheels=<number>: Fetches vehicle types based on the number of wheels.
+
 GET /api/vehicles?vehicleTypeId=<id>: Fetches specific vehicle models for a given vehicle type ID.
+
 POST /api/bookings: Submits a new vehicle booking.
