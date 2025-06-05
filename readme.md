@@ -109,7 +109,14 @@ In your second terminal, navigate to the frontend directory:
 cd frontend
 npm run dev
 ```
+The frontend development server should start, typically on http://localhost:3000.
 
+Open your browser and go to http://localhost:3000 to use the application.
+
+Database Seeding (If not done during setup) 🌱
+If you need to re-seed the database or missed the setup step:
+
+Ensure your backend server is not running or stop it.
 Navigate to the backend directory:
 ```Bash
 
@@ -118,7 +125,7 @@ cd backend
 Run the seed command:
 ```Bash
 
-npm run prisma:seed
+npx prisma db seed
 ```
 This will execute the script defined in prisma/seed.js to populate the database.
 API Endpoints (Backend) 📡
